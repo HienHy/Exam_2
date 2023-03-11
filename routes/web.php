@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,31 @@ Route::get('/', function () {
     return view('admin.layout');
 });
 
-Route::get("/admin/account/list", [\App\Http\Controllers\AccountControllner::class,"list"]);
+
+Route::middleware(['auth','admin'])-> prefix(env('ADMIN_PATH'))->group(function () {
+
+    Route::get("/dashboard", [\App\Http\Controllers\WebControllner::class, "home"]);
+
+
+    Route::prefix('newspaper')->group(function (){
+
+
+
+
+
+
+    });
+
+
+    });
+
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

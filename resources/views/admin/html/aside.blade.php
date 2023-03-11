@@ -36,7 +36,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
-Account
+User
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -44,62 +44,13 @@ Account
                         <li class="nav-item">
                             <a href="{{url("/admin/account/list")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Account </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/admin/account/create")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create Account</p>
+                                <p>List User </p>
                             </a>
                         </li>
 
                     </ul>
                 </li>
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Category
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{url("/admin/category")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List category  </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/admin/category/create")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create category</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Order
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{url("/admin/order")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List Order  </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
 
 
 
