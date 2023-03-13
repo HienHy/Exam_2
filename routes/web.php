@@ -39,6 +39,19 @@ Route::middleware(['auth','admin'])-> prefix(env('ADMIN_PATH'))->group(function 
 
 
 
+Route::prefix('title')->group(function (){
+    Route::get("/title", [\App\Http\Controllers\TitleControllner::class, "list"]);
+
+
+
+});
+
+
+
+
+
+
+
 
 
 
