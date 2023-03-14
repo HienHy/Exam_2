@@ -12,7 +12,9 @@ class WebControllner extends Controller
 
 
 
-        return view("admin.newspaper.list");
+
+
+        return view("welcome");
     }
 
 }

@@ -27,6 +27,9 @@ Route::middleware(['auth','admin'])-> prefix(env('ADMIN_PATH'))->group(function 
     Route::prefix('newspaper')->group(function (){
 
 
+        Route::get('/list',[\App\Http\Controllers\NewspaperControllner::class,"list"]);
+
+
 
 
 

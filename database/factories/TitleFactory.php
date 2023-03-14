@@ -14,6 +14,9 @@ class TitleFactory extends Factory
     public function definition()
     {
         return [
+            'name'=>$this->faker->unique()->name,
+            'icon'=>$this->faker->imageUrl,
+
             //
         ];
     }

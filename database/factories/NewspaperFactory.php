@@ -14,6 +14,16 @@ class NewspaperFactory extends Factory
     public function definition()
     {
         return [
+
+            'title'=>$this->faker->name,
+            'content'=>$this->faker->realText,
+            'image'=>$this->faker->imageUrl,
+            'user_id'=>random_int(1,11),
+            'title_id'=>random_int(1,10),
+            'publish_date'=>$this->faker->date,
+            'views_count'=>random_int(1,5000),
+            'status'=>random_int(1,4),
+
             //
         ];
     }

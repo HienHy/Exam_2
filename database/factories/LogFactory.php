@@ -14,6 +14,10 @@ class LogFactory extends Factory
     public function definition()
     {
         return [
+            'newspaper_id'=>random_int(1,10),
+            'log_content'=>$this->faker->realText,
+
+
             //
         ];
     }
