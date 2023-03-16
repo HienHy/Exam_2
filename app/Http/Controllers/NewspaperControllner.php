@@ -23,4 +23,38 @@ class NewspaperControllner extends Controller
    }
 
 
+   public  function create(Request $request){
+
+       $title =Title::all();
+
+
+
+       return view('admin.newspaper.create',compact('title'));
+   }
+
+
+   public function save(Request $request){
+
+       $request->validate([
+           'content'=>'required',
+
+
+       ],[
+
+           'required'=>'Vui lòng nhập nội dung'
+
+           ]
+       );
+
+
+       $data=$request;
+
+
+       Newspaper::create([
+           'content'=>$data
+       ]);
+       return redirect()->to('/admin/newspaper');
+
+   }
+
 }
