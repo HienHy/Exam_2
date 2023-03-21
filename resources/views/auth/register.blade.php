@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card-body register-card-body">
+    <div class="card-body register-card-body" >
         <p class="login-box-msg">Register a new membership</p>
 
         <form method="POST" action="{{ route('register') }}">

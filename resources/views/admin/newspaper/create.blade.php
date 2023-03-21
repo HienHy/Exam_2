@@ -3,7 +3,7 @@
 @section('main-content')
 <form role="form" action="{{url('admin/newspaper/create')}}" method="post" enctype="multipart/form-data">
     @csrf
-    <select name="title" class="mr-1">
+    <select name="title_id" class="mr-1">
         <option value="0">Choose Title..</option>
 
         @foreach($title as $item)
@@ -14,6 +14,8 @@
 
 
     </select>
+
+    <input name="name" type="text" placeholder="name" >
 
     <!-- Main content -->
     <section class="content">
@@ -77,7 +79,7 @@
 <script type="text/javascript" src ="/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src ="/ckfinder/ckfinder.js"></script>
 <script>
-    CKEDITOR.replace( 'content' );
+    CKEDITOR.replace('content');
 
 </script>
 @endsection

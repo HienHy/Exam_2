@@ -1,39 +1,87 @@
-<footer id="footer">
-    <div class="footer_top">
+<!-- Footer Start -->
+<div class="footer">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="footer_widget wow fadeInLeftBig">
-                    <h2>Flickr Images</h2>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="footer_widget wow fadeInDown">
-                    <h2>Tag</h2>
-                    <ul class="tag_nav">
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Sports</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Life &amp; Style</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Photo</a></li>
-                        <li><a href="#">Slider</a></li>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h3 class="title">Useful Links</h3>
+                    <ul>
+                        <li><a href="#">Pellentesque</a></li>
+                        <li><a href="#">Aliquam</a></li>
+                        <li><a href="#">Fusce placerat</a></li>
+                        <li><a href="#">Nulla hendrerit</a></li>
+                        <li><a href="#">Maecenas</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="footer_widget wow fadeInRightBig">
-                    <h2>Contact</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <address>
-                        Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
-                    </address>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h3 class="title">Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Posuere egestas</a></li>
+                        <li><a href="#">Sollicitudin</a></li>
+                        <li><a href="#">Luctus non</a></li>
+                        <li><a href="#">Duis tincidunt</a></li>
+                        <li><a href="#">Elementum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h3 class="title">Get in Touch</h3>
+                    <div class="contact-info">
+                        <p><i class="fa fa-map-marker"></i>123 Terry Lane, New York, USA</p>
+                        <p><i class="fa fa-envelope"></i>email@example.com</p>
+                        <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                        <div class="social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook"></i></a>
+                            <a href=""><i class="fab fa-linkedin"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h3 class="title">Newsletter</h3>
+                    <div class="newsletter">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos
+                        </p>
+                        <form>
+                            <input class="form-control" type="email" placeholder="Your email here">
+                            <button class="btn">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer_bottom">
-        <p class="copyright">Copyright &copy; 2045 <a href="index.html">NewsFeed</a></p>
-        <p class="developer">Developed By Wpfreeware</p>
+</div>
+<!-- Footer End -->
+
+
+<!-- Footer Bottom Start -->
+<div class="footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 copyright">
+                <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+            </div>
+
+            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+            <div class="col-md-6 template-by">
+                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+            </div>
+        </div>
     </div>
-</footer>
+</div>
+<!-- Footer Bottom End -->
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

@@ -33,9 +33,9 @@
 </head>
 <body>
 
-<div class="register-box">
+<div class="register-box" style="margin: auto">
     <div class="register-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>NEWS</b>24</a>
     </div>
 
     <div class="card">

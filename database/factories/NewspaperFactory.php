@@ -15,7 +15,7 @@ class NewspaperFactory extends Factory
     {
         return [
 
-            'title'=>$this->faker->name,
+            'name'=>$this->faker->name,
             'content'=>$this->faker->realText,
             'image'=>$this->faker->imageUrl,
             'user_id'=>random_int(1,11),

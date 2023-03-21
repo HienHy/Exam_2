@@ -21,7 +21,7 @@
 
                     <div class="input-group input-group-sm" style="width: 550px;">
 
-                        <select name="category_id" class="mr-1">
+                        <select name="title_id" class="mr-1">
                             <option value="0">Choose Title..</option>
 
                             @foreach($title as $item)
@@ -55,8 +55,8 @@
                     <th>Name</th>
                     <th>Content</th>
                     <th>Image</th>
-                    <th>User_id</th>
-                    <th>Title_id</th>
+                    <th>Author</th>
+                    <th>Title</th>
                     <th>Views_count</th>
                     <th style="width: 40px">Status</th>
                 </tr>
@@ -65,10 +65,10 @@
                 @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->title}}</td>
+                        <td>{{$item->name}}</td>
                         <td>{{$item->content}}</td>
                         <td><img src="{{$item->image}}" alt="" srcset="" width="80" height="80"> </td>
-                        <td>{{$item->user_id}}</td>
+                        <td>{{$item->User->name}}</td>
                         <td>{{$item->Title->name}}</td>
                         <td>{{$item->views_count}}</td>
                         <td>

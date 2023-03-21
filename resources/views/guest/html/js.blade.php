@@ -1,8 +1,9 @@
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/wow.min.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/slick.min.js"></script>
-<script src="/assets/js/jquery.li-scroller.1.0.js"></script>
-<script src="/assets/js/jquery.newsTicker.min.js"></script>
-<script src="/assets/js/jquery.fancybox.pack.js"></script>
-<script src="/assets/js/custom.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/lib/easing/easing.min.js"></script>
+<script src="/assets/lib/slick/slick.min.js"></script>
+
+
+<!-- Template Javascript -->
+<script src="/assets/js/main.js"></script>

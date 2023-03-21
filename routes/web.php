@@ -45,7 +45,20 @@ Route::prefix('title')->group(function () {
 
 
 Route::get("/", [\App\Http\Controllers\GuestControllner::class,"index"]);
-Route::get("/single-page", [\App\Http\Controllers\GuestControllner::class,"singlePage"]);
+Route::get("/single-page/{newspaper}", [\App\Http\Controllers\GuestControllner::class,"singlePage"]);
+Route::get("/cong-nghe", [\App\Http\Controllers\GuestControllner::class,"congNghePage"])->name('thoisu');
+Route::get("/du-lich", [\App\Http\Controllers\GuestControllner::class,"duLichPage"]);
+Route::get("/giai-tri", [\App\Http\Controllers\GuestControllner::class,"giaiTriPage"]);
+Route::get("/giao-duc", [\App\Http\Controllers\GuestControllner::class,"giaoDucPage"]);
+Route::get("/kinh-doanh", [\App\Http\Controllers\GuestControllner::class,"kinhDoanhPage"]);
+Route::get("/phap-luat", [\App\Http\Controllers\GuestControllner::class,"phapLuatPage"]);
+Route::get("/the-gioi", [\App\Http\Controllers\GuestControllner::class,"theGioiPage"]);
+Route::get("/the-thao", [\App\Http\Controllers\GuestControllner::class,"theThaoPage"]);
+Route::get("/thoi-su", [\App\Http\Controllers\GuestControllner::class,"thoiSuPage"]);
+Route::get("/van-hoa", [\App\Http\Controllers\GuestControllner::class,"vanHoaPage"]);
+Route::get("/xe", [\App\Http\Controllers\GuestControllner::class,"xePage"]);
+
+
 
 
 

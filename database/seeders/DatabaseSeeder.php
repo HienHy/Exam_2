@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 //        Newspaper::factory(10)->create();
 
 //        Log::factory(10)->create();
-        Comment::factory(50)->create();
+//        Comment::factory(50)->create();
 
 
     }

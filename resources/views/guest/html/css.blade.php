@@ -1,12 +1,14 @@
-<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/font.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/li-scroller.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/jquery.fancybox.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/theme.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-<!--[if lt IE 9]>
-<script src="/assets/js/html5shiv.min.js"></script>
-<script src="/assets/js/respond.min.js"></script>
+<!-- Favicon -->
+<link href="/assets/img/favicon.ico" rel="icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+<!-- CSS Libraries -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="/assets/lib/slick/slick.css" rel="stylesheet">
+<link href="/assets/lib/slick/slick-theme.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="/assets/css/style.css" rel="stylesheet">
