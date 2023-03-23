@@ -19,6 +19,7 @@ class Newspaper extends Model
         'publish_date',
         'views_count',
         'status',
+        'slug',
 
 
     ];
@@ -49,5 +50,9 @@ class Newspaper extends Model
     }
     public function User(){
         return $this->belongsTo(User::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
 }

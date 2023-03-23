@@ -114,7 +114,7 @@
                                             <img src="/assets/img/latest-news.jpg" />
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="{{url("single-page",["newspaper"=>$last_news->id])}}">{{$last_news->name}}</a>
+                                            <a class="mn-title" href="{{url("single-page",["newspaper"=>$last_news->slug])}}">{{$last_news->name}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
                                         </div>
                                     </div>

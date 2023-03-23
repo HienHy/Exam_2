@@ -3,7 +3,7 @@
 @section("content-header")
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="text-center h1 display-3  bg-blue text-white" >List Newspaper</h1>
+            <h1 class="text-center h1 display-3  bg-blue text-white" >Chờ Duyệt</h1>
         </div><!-- /.col -->
     </div><!-- /.row -->
 @endsection
@@ -15,7 +15,7 @@
 
 
             <div class="card-tools">
-                <form action="{{url("/admin/newspaper/list")}}" method="get">
+                <form action="{{url("/admin/newspaper/cho-duyet")}}" method="get">
 
 
 
@@ -57,8 +57,8 @@
                     <th>Image</th>
                     <th>Author</th>
                     <th>Title</th>
-                    <th>Views_count</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -70,7 +70,6 @@
                         <td><img src="{{$item->image}}" alt="" srcset="" width="80" height="80"> </td>
                         <td>{{$item->User->name}}</td>
                         <td>{{$item->Title->name}}</td>
-                        <td>{{$item->views_count}}</td>
                         <td>
                             @if($item->status)
                                 <span class="badge bg-success">Active</span>
@@ -79,20 +78,8 @@
 
                             @endif
                         </td>
+                       <td><a href="{{route("newspaper_details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a></td>
 
-{{--                        <td>--}}
-{{--                            <a href="{{route("product_edit",["product"=>$item->id])}}" class="btn-outline-info btn">Edit</a>--}}
-{{--                            <form method="post" action="{{route("product_delete",['product'=>$item->id])}}">--}}
-{{--                                @method("DELETE")--}}
-{{--                                @csrf--}}
-{{--                                <button type="submit" onclick=" return confirm('ban chac muon xoa san pham')" class="btn btn-outline-warning">--}}
-{{--                                    Delete--}}
-
-{{--                                </button>--}}
-
-{{--                            </form>--}}
-
-{{--                        </td>--}}
                     </tr>
 
                 @endforeach

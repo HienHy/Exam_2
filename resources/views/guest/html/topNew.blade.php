@@ -9,7 +9,7 @@
                         <div class="tn-content-inner">
                             <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
                             <a class="tn-title-name" href="{{url('/kinh-doanh')}}">{{$newspaper->Title->name}}</a>
-                            <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper->id])}}">{{$newspaper->name}}</a>
+                            <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper->slug])}}">{{$newspaper->name}}</a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
                                     <a class="tn-title-name" href="{{url('/van-hoa')}}">{{$newspaper1->Title->name}}</a>
 
-                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper1->id])}}">{{$newspaper1->name}}</a>
+                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper1->slug])}}">{{$newspaper1->name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
                                     <a class="tn-title-name" href="{{url('/the-gioi')}}">{{$newspaper2->Title->name}}</a>
 
-                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper2->id])}}">{{$newspaper2->name}}</a>
+                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper2->slug])}}">{{$newspaper2->name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
                                     <a class="tn-title-name" href="{{url('/thoi-su')}}">{{$newspaper3->Title->name}}</a>
-                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper3->id])}}">{{$newspaper3->name}}</a>
+                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper3->slug])}}">{{$newspaper3->name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
                                     <a class="tn-title-name" href="{{url('/giai-tri')}}">{{$newspaper4->Title->name}}</a>
 
-                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper4->id])}}">{{$newspaper4->name}}</a>
+                                    <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper4->slug])}}">{{$newspaper4->name}}</a>
                                 </div>
                             </div>
                         </div>

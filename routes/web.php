@@ -27,8 +27,19 @@ Route::middleware(['auth','admin'])->prefix(env('ADMIN_PATH'))->group(function (
     Route::prefix('newspaper')->group(function () {
 
         Route::get('/list', [\App\Http\Controllers\NewspaperControllner::class, "list"]);
+        Route::get('/cho-duyet', [\App\Http\Controllers\NewspaperControllner::class, "choDuyet"]);
+        Route::get('/details/{newspaper:slug}', [\App\Http\Controllers\NewspaperControllner::class, "details"])->name('newspaper_details');
+        Route::put('/details/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "duyetBai"])->name('newspaper_duyet');
         Route::get('/create', [\App\Http\Controllers\NewspaperControllner::class, "create"]);
         Route::post('/create', [\App\Http\Controllers\NewspaperControllner::class, "save"]);
+
+
+    });
+
+
+    Route::prefix('user')->group(function (){
+        Route::get('/list', [\App\Http\Controllers\UserControllner::class, "list"]);
+
 
 
     });
@@ -45,7 +56,7 @@ Route::prefix('title')->group(function () {
 
 
 Route::get("/", [\App\Http\Controllers\GuestControllner::class,"index"]);
-Route::get("/single-page/{newspaper}", [\App\Http\Controllers\GuestControllner::class,"singlePage"]);
+Route::get("/single-page/{newspaper:slug}", [\App\Http\Controllers\GuestControllner::class,"singlePage"]);
 Route::get("/cong-nghe", [\App\Http\Controllers\GuestControllner::class,"congNghePage"])->name('thoisu');
 Route::get("/du-lich", [\App\Http\Controllers\GuestControllner::class,"duLichPage"]);
 Route::get("/giai-tri", [\App\Http\Controllers\GuestControllner::class,"giaiTriPage"]);
@@ -57,6 +68,9 @@ Route::get("/the-thao", [\App\Http\Controllers\GuestControllner::class,"theThaoP
 Route::get("/thoi-su", [\App\Http\Controllers\GuestControllner::class,"thoiSuPage"]);
 Route::get("/van-hoa", [\App\Http\Controllers\GuestControllner::class,"vanHoaPage"]);
 Route::get("/xe", [\App\Http\Controllers\GuestControllner::class,"xePage"]);
+Route::post("/aa", [\App\Http\Controllers\CommentControllner::class,"store"]);
+
+
 
 
 

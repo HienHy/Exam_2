@@ -13,16 +13,24 @@
                 <div class="col-md-4">
                     <div class="sidebar">
                         <div class="sidebar-widget">
-                            <h2><i class="fas fa-align-justify"></i>Category</h2>
+                            <h2><i class="fas fa-align-justify"></i>Xem Nhiều Trong Ngày</h2>
                             <div class="category">
                                 <ul class="fa-ul">
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">National</a></li>
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">International</a></li>
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Economics</a></li>
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Politics</a></li>
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Lifestyle</a></li>
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Technology</a></li>
-                                    <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Trades</a></li>
+
+                                    <div class="col-lg-6">
+                                        @foreach($top_views as $views)
+                                            <div class="mn-list">
+                                                <div class="mn-img">
+                                                    <img src="/assets/img/latest-news.jpg" />
+                                                </div>
+                                                <div class="mn-content">
+                                                    <a class="mn-title" href="{{url("single-page",["newspaper"=>$views->slug])}}">{{$views->name}}</a>
+                                                    <a class="mn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                                </div>
+                                            </div>
+                                        @endforeach
+
+                                    </div>
                                 </ul>
                             </div>
                         </div>
@@ -72,9 +80,24 @@
             </div>
         </div>
     </div>
+    <div class="col-6">
+        <h4>Display Comments</h4>
 
+        @include('guest.commentDisplay', ['comments' => $newspaper->comments, 'newspaper_id' => $newspaper->id])
 
-
+        <hr />
+        <h4>Add comment</h4>
+        <form method="post" action="{{url('/aa')}}">
+            @csrf
+            <div class="form-group">
+                <textarea class="form-control" name="content" required></textarea>
+                <input type="hidden" name="newspaper_id" value="{{ $newspaper->id }}" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Add Comment" />
+            </div>
+        </form>
+    </div>
 
 
 @endsection

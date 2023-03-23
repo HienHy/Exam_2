@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Newspaper;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -33,31 +34,44 @@ class GuestControllner extends Controller
         $dt->toDayDateTimeString();
 
 
-
-
         $related_newspaper = Newspaper::where('title_id', $newspaper->title_id)
             ->where('id', '<>', $newspaper->id)
             ->orderBy('created_at', 'desc')->limit(4)->get();
 
 
+        $top_views = Newspaper::orderBy("views_count", 'desc')->limit(5)->get();
 
 
-        $views = $newspaper ->views_count+1;
-
-
-$newspaper->update([
-    'views_count'=>$views
-]);
+        $views = $newspaper->views_count + 1;
 
 
 
 
 
 
-        return view('guest.single-page', compact('dt', 'newspaper', 'related_newspaper'));
+        $newspaper->update([
+            'views_count' => $views
+        ]);
+
+
+
+
+
+
+
+
+
+
+        return view('guest.single-page', compact('dt', 'newspaper', 'related_newspaper', 'top_views'));
 
 
     }
+
+
+
+
+
+
 
     public function thoiSuPage()
     {
@@ -124,8 +138,6 @@ $newspaper->update([
 
         return view('guest.xe');
     }
-
-
 
 
     //

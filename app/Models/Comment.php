@@ -14,9 +14,20 @@ class Comment extends Model
         'user_id',
         'newspaper_id',
         'role',
-        'status'
+        'status',
+        'parent_id'
 
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function replies()
+    {
+        return $this->hasMany(Comment::class, 'parent_id');
+    }
 
     use HasFactory;
 }

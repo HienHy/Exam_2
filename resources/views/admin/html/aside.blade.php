@@ -42,7 +42,7 @@ User
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{url("/admin/account/list")}}" class="nav-link">
+                            <a href="{{url("/admin/user/list")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List User </p>
                             </a>
@@ -64,6 +64,13 @@ User
                             <a href="{{url("/admin/newspaper/list")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List Newspaper </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{url("/admin/newspaper/cho-duyet")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cho Duyet </p>
                             </a>
                         </li>
                         <li class="nav-item">
