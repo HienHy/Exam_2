@@ -16,6 +16,7 @@
 {{--    <![endif]--></head>--}}
 <body>
     @include('guest.html.header')
+    @yield('content-header')
 
 
     {{--    @include('guest.html.sliderSection')--}}

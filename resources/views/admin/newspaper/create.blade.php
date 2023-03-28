@@ -18,18 +18,19 @@
     <input name="name" type="text" placeholder="name" required>
 
 
-{{--    <div class="form-group">--}}
-{{--        <label for="exampleInputFile">Thumbnail</label>--}}
-{{--        <div class="input-group">--}}
-{{--            <div class="custom-file">--}}
-{{--                <input name="image" type="file" class="custom-file-input" id="exampleInputFile">--}}
-{{--                <label class="custom-file-label" for="exampleInputFile">Choose file</label>--}}
-{{--            </div>--}}
-{{--            <div class="input-group-append">--}}
-{{--                <span class="input-group-text" id="">Upload</span>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    <div class="form-group">
+        <label for="exampleInputFile">Thumbnail</label>
+        <div class="input-group">
+            <div class="custom-file">
+                <input name="image" type="file" class="custom-file-input" id="exampleInputFile" required size="1000000">
+                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                @error('image') <p class="text-danger">{{$message}}</p> @enderror
+            </div>
+            <div class="input-group-append">
+                <span class="input-group-text" id="">Upload</span>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -57,7 +58,7 @@
                     <!-- /.card-header -->
                     <div class="card-body pad">
                         <div class="mb-3">
-                <textarea name="content" class="textarea" placeholder="Place some text here"
+                <textarea name="content" class="textarea" placeholder="Place some text here" required
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         </div>
                     </div>

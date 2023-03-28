@@ -4,7 +4,7 @@
             <div class="col-md-6 tn-left">
                 @foreach($news_thoisu as $newspaper)
                 <div class="tn-img">
-                    <img src="/assets/img/top-news-2.jpg" />
+                    <img src="{{$newspaper->image}}" />
                     <div class="tn-content">
                         <div class="tn-content-inner">
                             <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
@@ -21,7 +21,7 @@
                     <div class="col-md-6">
                         @foreach($news_thoisu1 as $newspaper1)
                         <div class="tn-img">
-                            <img src="/assets/img/top-news-2.jpg"/>
+                            <img src="{{$newspaper1->image}}"height="260px"/>
                             <div class="tn-content">
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
@@ -39,7 +39,7 @@
                         @foreach($news_thoisu2 as $newspaper2)
 
                         <div class="tn-img">
-                            <img src="/assets/img/top-news-3.jpg" />
+                            <img src="{{$newspaper2->image}}"height="260px" />
                             <div class="tn-content">
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
@@ -57,7 +57,7 @@
                         @foreach($news_thoisu3 as $newspaper3)
 
                         <div class="tn-img">
-                            <img src="/assets/img/top-news-4.jpg" />
+                            <img src="{{$newspaper3->image}}" height="260px" />
                             <div class="tn-content">
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
@@ -73,7 +73,7 @@
                         @foreach($news_thoisu4 as $newspaper4)
 
                         <div class="tn-img">
-                            <img src="/assets/img/top-news-5.jpg" />
+                            <img src="{{$newspaper4->image}}"height="260px" />
                             <div class="tn-content">
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>

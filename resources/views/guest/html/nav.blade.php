@@ -5,7 +5,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav main_nav">
-                <li class="active"><a href="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+                <li><a href="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
                 <li><a href="#">Thời Sự</a></li>
                 <li><a href="#">Thế Giới </a></li>
                 <li><a href="#">Pháp Luật </a></li>
@@ -13,7 +13,6 @@
                 <li><a href="#">Công Nghệ </a></li>
                 <li><a href="#">Xe</a></li>
                 <li><a href="#">Du Lịch</a></li>
-                <li><a href="#">Nhịp Sông Trẻ</a></li>
                 <li><a href="#">Văn Hoá</a></li>
                 <li><a href="#">Giải Trí</a></li>
                 <li><a href="#">Thể Thao</a></li>

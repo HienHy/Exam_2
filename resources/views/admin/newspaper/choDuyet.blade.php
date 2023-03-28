@@ -53,11 +53,11 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th>Name</th>
-                    <th>Content</th>
+{{--                    <th>Content</th>--}}
                     <th>Image</th>
                     <th>Author</th>
                     <th>Title</th>
-                    <th>Status</th>
+{{--                    <th>Status</th>--}}
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -66,18 +66,10 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->content}}</td>
+{{--                        <td>{{$item->content}}</td>--}}
                         <td><img src="{{$item->image}}" alt="" srcset="" width="80" height="80"> </td>
                         <td>{{$item->User->name}}</td>
                         <td>{{$item->Title->name}}</td>
-                        <td>
-                            @if($item->status)
-                                <span class="badge bg-success">Active</span>
-                            @else
-                                <span class="badge bg-warning">Inactive</span>
-
-                            @endif
-                        </td>
                        <td><a href="{{route("newspaper_details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a></td>
 
                     </tr>

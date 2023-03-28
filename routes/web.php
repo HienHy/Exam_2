@@ -27,9 +27,15 @@ Route::middleware(['auth','admin'])->prefix(env('ADMIN_PATH'))->group(function (
     Route::prefix('newspaper')->group(function () {
 
         Route::get('/list', [\App\Http\Controllers\NewspaperControllner::class, "list"]);
+        Route::get('/da-xuat-ban', [\App\Http\Controllers\NewspaperControllner::class, "list1"]);
         Route::get('/cho-duyet', [\App\Http\Controllers\NewspaperControllner::class, "choDuyet"]);
-        Route::get('/details/{newspaper:slug}', [\App\Http\Controllers\NewspaperControllner::class, "details"])->name('newspaper_details');
-        Route::put('/details/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "duyetBai"])->name('newspaper_duyet');
+        Route::get('/chi-tiet-duyet/{newspaper:slug}', [\App\Http\Controllers\NewspaperControllner::class, "details"])->name('newspaper_details');
+        Route::get('/details1/{newspaper:slug}', [\App\Http\Controllers\NewspaperControllner::class, "details1"])->name('newspaper_details1');
+        Route::put('/chi-tiet-duyet/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "duyetBai"])->name('newspaper_duyet');
+        Route::delete('/chi-tiet-duyet/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "khongDuyetBai"])->name('newspaper_khongduyet');
+        Route::put('/details1/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "xuatBanNgay"])->name('newspaper_xuatbanngay');
+        Route::post('/details1/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "lenlichxuatban"])->name('newspaper_lenlich');
+
         Route::get('/create', [\App\Http\Controllers\NewspaperControllner::class, "create"]);
         Route::post('/create', [\App\Http\Controllers\NewspaperControllner::class, "save"]);
 

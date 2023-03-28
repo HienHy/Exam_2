@@ -15,14 +15,14 @@ class CreateTableNewspaper extends Migration
     {
         Schema::create('newspaper', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('content');
+            $table->string('name');
+            $table->longText('content');
             $table->string('image');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('title_id');
             $table->date('publish_date');
-            $table->bigInteger('views_count');
-            $table->integer('status');
+            $table->bigInteger('views_count')->default(0);
+            $table->integer('status')->default(0);
 
             $table->foreign('user_id')->references('id')->on("users");
             $table->foreign('title_id')->references('id')->on("title");

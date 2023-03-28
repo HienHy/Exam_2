@@ -22,7 +22,25 @@ class GuestControllner extends Controller
         $news_thoisu4 = Newspaper::where('title_id', '=', '10')->orderBy("created_at", 'desc')->limit(1)->get();
         $last_news = Newspaper::orderBy("created_at", 'desc')->limit(5)->get();
 
-        return view('guest.home', compact('dt', 'last_news', 'news_thoisu', 'news_thoisu1', 'news_thoisu2', 'news_thoisu3', 'news_thoisu4'));
+
+        $top_thoisu = Newspaper::where('title_id', '=', '1')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_thegioi = Newspaper::where('title_id', '=', '2')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_phapluat = Newspaper::where('title_id', '=', '3')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_kinhdoanh = Newspaper::where('title_id', '=', '4')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_congnghe = Newspaper::where('title_id', '=', '5')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_xe = Newspaper::where('title_id', '=', '6')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_dulich = Newspaper::where('title_id', '=', '7')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_vanhoa = Newspaper::where('title_id', '=', '9')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_giaitri= Newspaper::where('title_id', '=', '10')->orderBy("created_at", 'desc')->limit(3)->get();
+        $top_thethao = Newspaper::where('title_id', '=', '11')->orderBy("created_at", 'desc')->limit(3)->get();
+
+
+
+
+
+
+        return view('guest.home', compact('dt', 'last_news', 'news_thoisu', 'news_thoisu1', 'news_thoisu2', 'news_thoisu3', 'news_thoisu4','top_thoisu'
+        ,'top_thegioi','top_xe','top_giaitri','top_phapluat','top_kinhdoanh','top_congnghe','top_congnghe','top_dulich','top_vanhoa','top_thethao'));
     }
 
 
@@ -33,10 +51,9 @@ class GuestControllner extends Controller
         $dt = Carbon::now('Asia/Ho_Chi_Minh');
         $dt->toDayDateTimeString();
 
-
-        $related_newspaper = Newspaper::where('title_id', $newspaper->title_id)
-            ->where('id', '<>', $newspaper->id)
-            ->orderBy('created_at', 'desc')->limit(4)->get();
+        $related_newspaper = Newspaper::where('title_id',$newspaper->title_id)
+            ->where('id','<>',$newspaper->id)
+            ->orderBy('created_at', 'desc')->limit(2)->get();
 
 
         $top_views = Newspaper::orderBy("views_count", 'desc')->limit(5)->get();
@@ -46,7 +63,7 @@ class GuestControllner extends Controller
 
 
 
-
+//dd($related_newspaper);
 
 
         $newspaper->update([

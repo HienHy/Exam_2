@@ -51,32 +51,38 @@ User
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a href="{{url("/admin/newspaper/da-xuat-ban")}}" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
-                            Newspaper
+                            News
 
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="{{url("/admin/newspaper/da-xuat-ban")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Đã Xuất Bản </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{url("/admin/newspaper/list")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Newspaper </p>
+                                <p>Chờ Xuất Bản </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{url("/admin/newspaper/cho-duyet")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Cho Duyet </p>
+                                <p>Chờ Duyệt </p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{url("/admin/newspaper/create")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Create Newspaper </p>
+                                <p>Viết Bài </p>
                             </a>
                         </li>
 

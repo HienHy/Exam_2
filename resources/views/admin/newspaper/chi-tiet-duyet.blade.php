@@ -8,9 +8,17 @@
     </div><!-- /.row -->
 @endsection
 @section("main-content")
-{!! $newspaper->content !!}
+
+        {!! $newspaper->content !!}
 
 
+        <a  href="{{route("newspaper_khongduyet",['newspaper'=>$newspaper->id])}}">
+            <button type="submit" onclick="return confirm('Bạn có chắc không muốn duyệt bài viết này?')" class="btn btn-outline-warning">
+                Không duyệt và yêu cầu chỉnh sửa
+
+            </button>
+
+        </a>
 <form method="post" action="{{route("newspaper_duyet",['newspaper'=>$newspaper->id])}}">
 
     @method('PUT')
@@ -20,6 +28,9 @@
 
     </button>
 
+
 </form>
+
+
 
 @endsection
