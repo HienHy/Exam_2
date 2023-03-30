@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     use HasFactory;
+
     protected  $table = 'admins';
     protected $fillable = [
 
@@ -17,7 +18,8 @@ class Admin extends Model
 
 
     const ADMIN =   'ADMIN';
-    const STAFF =   'STAFF';
+    const BTV =   'BTV';
+    const PV =   'PV';
 
     public function  User(){
 

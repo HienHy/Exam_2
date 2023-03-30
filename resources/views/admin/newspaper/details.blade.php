@@ -2,7 +2,7 @@
 @section("title","List Newspaper")
 @section("content-header")
     <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <h1 class="text-center h1 display-3  bg-blue text-white" >Chi Tiết</h1>
         </div><!-- /.col -->
     </div><!-- /.row -->
@@ -10,13 +10,9 @@
 @section("main-content")
 
         {!! $newspaper->content !!}
-
-
-        <a  href="{{route("newspaper_khongduyet",['newspaper'=>$newspaper->id])}}">
-            <button type="submit" onclick="return confirm('Bạn có chắc không muốn duyệt bài viết này?')" class="btn btn-outline-warning">
-                Không duyệt và yêu cầu chỉnh sửa
-
-            </button>
+@if($newspaper -> status === 1)
+        <a  href="{{route("newspaper.khongduyet",['newspaper'=>$newspaper->id])}}">
+            Không duyệt và yêu cầu chỉnh sửa
 
         </a>
 <form method="post" action="{{route("newspaper_duyet",['newspaper'=>$newspaper->id])}}">
@@ -30,7 +26,7 @@
 
 
 </form>
-
+@endif
 
 
 @endsection

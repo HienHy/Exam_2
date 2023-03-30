@@ -42,18 +42,41 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Admin(){
+    public function Admin()
+    {
 
         return $this->hasOne(Admin::class);
     }
 
 
-    public function isAdmin(){
+    public function isAdmin()
+    {
         $admin = $this->Admin;
-        if ($admin && $admin -> role == Admin::ADMIN){
+        if ($admin && $admin->role == Admin::ADMIN) {
 
             return true;
         }
         return false;
     }
+
+    public function isBTV()
+    {
+        $admin = $this->Admin;
+        if ($admin && $admin->role == Admin::BTV) {
+
+            return true;
+        }
+        return false;
+    }
+
+    public function isPV()
+    {
+        $admin = $this->Admin;
+        if ($admin && $admin->role == Admin::PV) {
+
+            return true;
+        }
+        return false;
+    }
+
 }

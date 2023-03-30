@@ -1,4 +1,6 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+@if(auth()->user()->Admin->role == \App\Models\Admin::ADMIN || auth()->user()->Admin->role == \App\Models\Admin::BTV)
+
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{url('/admin/dashboard')}}" class="brand-link">
         <img src="/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -11,83 +13,79 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <i class="fa fa-user img-circle elevation-2"></i>
             </div>
             <div class="info">
-                <a href="{{url('/admin/dashboard')}}" class="d-block">Alexander Pierce</a>
+                <a href="{{url('/admin/dashboard')}}" class="d-block">{{auth()->user()->name}}</a>
             </div>
         </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview menu-open">
-                    <a href="{{url("/dashboard")}}" class="nav-link ">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                        </p>
-                    </a>
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="{{url("/dashboard")}}" class="nav-link ">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
 
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-User
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{url("/admin/user/list")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List User </p>
-                            </a>
-                        </li>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                User
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url("/admin/user/list")}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List User </p>
+                                </a>
+                            </li>
 
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="{{url("/admin/newspaper/da-xuat-ban")}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            News
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="{{url("/admin/newspaper/list")}}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                News
 
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{url("/admin/newspaper/da-xuat-ban")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Đã Xuất Bản </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/admin/newspaper/list")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Chờ Xuất Bản </p>
-                            </a>
-                        </li>
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url("/admin/newspaper/list")}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Danh Sách Bài Viết </p>
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a href="{{url("/admin/newspaper/cho-duyet")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Chờ Duyệt </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url("/admin/newspaper/create")}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Viết Bài </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="{{url("/admin/newspaper/cho-duyet")}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Chờ Duyệt </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url("/admin/newspaper/create")}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Viết Bài </p>
+                                </a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+
+
+
 
 
 
@@ -101,3 +99,5 @@ User
 <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
 </aside>
+@endif
+

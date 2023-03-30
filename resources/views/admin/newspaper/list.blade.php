@@ -3,7 +3,7 @@
 @section("content-header")
     <div class="row mb-2">
         <div class="col-sm-12">
-            <h1 class="text-center h1 display-3  bg-blue text-white" >Chờ Xuất Bản</h1>
+            <h1 class="text-center h1 display-3  bg-blue text-white" >Danh Sách Bài Viết</h1>
         </div><!-- /.col -->
     </div><!-- /.row -->
 @endsection
@@ -73,14 +73,24 @@
                         <td>{{$item->Title->name}}</td>
                         <td>{{$item->publish_date}}</td>
                         <td>
-                            @if($item->status)
-                                <span class="badge bg-success">Active</span>
-                            @else
-                                <span class="badge bg-warning">Inactive</span>
+                            @switch($item->status)
+                             @case(1)
+                                    <span class="badge bg-warning">Chưa duyệt</span>
+                                @break;
+                                @case(2)
 
-                            @endif
+                                <span class="badge bg-warning">Chưa xuất bản</span>
+                                @break;
+                                @case(3)
+
+                                <span class="badge bg-success">Đã xuất bản</span>
+                                @break;
+                                @default
+                                @break;
+
+                            @endswitch
                         </td>
-                        <td><a href="{{route("newspaper_details1",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a></td>
+                        <td><a href="{{route("newspaper.details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a></td>
 
                     </tr>
 

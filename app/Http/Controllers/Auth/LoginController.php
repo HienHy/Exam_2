@@ -45,5 +45,11 @@ class LoginController extends Controller
         if ($user->isAdmin()){
             return  redirect('admin/dashboard');
         }
+        if ($user->isBTV()){
+            return  redirect('admin/dashboard');
+        }
+        if ($user->isPV()){
+            return  redirect('admin/newspaper/create');
+        }
     }
 }

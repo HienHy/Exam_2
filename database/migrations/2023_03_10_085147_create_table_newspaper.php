@@ -23,6 +23,7 @@ class CreateTableNewspaper extends Migration
             $table->date('publish_date');
             $table->bigInteger('views_count')->default(0);
             $table->integer('status')->default(0);
+            $table->text('description');
 
             $table->foreign('user_id')->references('id')->on("users");
             $table->foreign('title_id')->references('id')->on("title");

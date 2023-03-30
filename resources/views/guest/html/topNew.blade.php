@@ -4,7 +4,7 @@
             <div class="col-md-6 tn-left">
                 @foreach($news_thoisu as $newspaper)
                 <div class="tn-img">
-                    <img src="{{$newspaper->image}}" />
+                    <img src="{{$newspaper->image}}" height="550px" />
                     <div class="tn-content">
                         <div class="tn-content-inner">
                             <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>

@@ -21,6 +21,7 @@ class GuestControllner extends Controller
         $news_thoisu3 = Newspaper::where('title_id', '=', '1')->orderBy("created_at", 'desc')->limit(1)->get();
         $news_thoisu4 = Newspaper::where('title_id', '=', '10')->orderBy("created_at", 'desc')->limit(1)->get();
         $last_news = Newspaper::orderBy("created_at", 'desc')->limit(5)->get();
+        $last_news1 = Newspaper::orderBy("publish_date", 'desc')->limit(1)->get();
 
 
         $top_thoisu = Newspaper::where('title_id', '=', '1')->orderBy("created_at", 'desc')->limit(3)->get();
@@ -39,7 +40,7 @@ class GuestControllner extends Controller
 
 
 
-        return view('guest.home', compact('dt', 'last_news', 'news_thoisu', 'news_thoisu1', 'news_thoisu2', 'news_thoisu3', 'news_thoisu4','top_thoisu'
+        return view('guest.home', compact('last_news1','dt', 'last_news', 'news_thoisu', 'news_thoisu1', 'news_thoisu2', 'news_thoisu3', 'news_thoisu4','top_thoisu'
         ,'top_thegioi','top_xe','top_giaitri','top_phapluat','top_kinhdoanh','top_congnghe','top_congnghe','top_dulich','top_vanhoa','top_thethao'));
     }
 
@@ -92,6 +93,8 @@ class GuestControllner extends Controller
 
     public function thoiSuPage()
     {
+
+
 
         return view('guest.thoi-su');
     }

@@ -2,7 +2,7 @@
 @section("title","List Newspaper")
 @section("content-header")
     <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <h1 class="text-center h1 display-3  bg-blue text-white" >Chờ Duyệt</h1>
         </div><!-- /.col -->
     </div><!-- /.row -->
@@ -70,7 +70,7 @@
                         <td><img src="{{$item->image}}" alt="" srcset="" width="80" height="80"> </td>
                         <td>{{$item->User->name}}</td>
                         <td>{{$item->Title->name}}</td>
-                       <td><a href="{{route("newspaper_details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a></td>
+                       <td><a href="{{route("newspaper.details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a></td>
 
                     </tr>
 

@@ -62,7 +62,7 @@
 
 
                     @guest
-                        <a href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
+                        <a class="nav-item nav-link" href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
                     @endguest
 
                     @auth

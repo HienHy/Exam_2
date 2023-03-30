@@ -2,12 +2,13 @@
 @foreach($comments as $comment)
 <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
 
+<p><strong>{{ $comment->user->name }}</strong>  {{ $comment->content }}</p>
+
+    <a href="" id="reply"></a>
 
 
-<strong>{{ $comment->user->name }}</strong>
-<p>{{ $comment->content }}</p>
-<a href="" id="reply"></a>
-<form method="post" action="{{url('/aa') }}">
+
+    <form method="post" action="{{url('/aa') }}">
     @csrf
     <div class="form-group">
         <input type="text" name="content" class="form-control" required/>

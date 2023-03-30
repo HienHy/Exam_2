@@ -1,5 +1,18 @@
 @extends('guest.layout')
-
+@section('after-css')
+    <style>
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .mn-list{
+            padding: 15px 0;
+        }
+        .mn-title{
+            font-size: 14px;
+        }
+    </style>
+@endsection
 @section('content-header' )
 
     <nav aria-label="breadcrumb">
@@ -12,6 +25,7 @@
     <h6><i class="fa fa-user"></i>{{$newspaper->User->name}} </h6>
 @endsection
 @section('main-content')
+
 
     <!-- Single News Start-->
     <div class="single-news">
@@ -29,7 +43,7 @@
                                         @foreach($related_newspaper as $views)
                                             <div class=" mn-list" style="display: flex">
                                                 <div class="col-6 mn-img">
-                                                    <img src="/assets/img/latest-news.jpg" width="100%" />
+                                                    <img src="../{{$views->image}}" width="100%" height="100px"/>
                                                 </div>
                                                 <div class="col-6 mn-content">
                                                     <a class="mn-title" href="{{url("single-page",["newspaper"=>$views->slug])}}">{{$views->name}}</a>
@@ -48,7 +62,7 @@
                                 @foreach($top_views as $views)
                                     <div class="mn-list" style="display: flex">
                                         <div class="col-6 mn-img">
-                                            <img src="/assets/img/latest-news.jpg" width="100%" />
+                                            <img src="../{{$views->image}}" width="100%" height="100px"/>
                                         </div>
                                         <div class=" col-6 mn-content">
                                             <a class="mn-title" href="{{url("single-page",["newspaper"=>$views->slug])}}">{{$views->name}}</a>
@@ -71,11 +85,9 @@
     </div>
     <div class="col-6">
         <h4>Bình Luận</h4>
-
         @include('guest.commentDisplay', ['comments' => $newspaper->comments, 'newspaper_id' => $newspaper->id])
 
         <hr />
-        <h4>Bình luận</h4>
         <form method="post" action="{{url('/aa')}}">
             @csrf
             <div class="form-group">
@@ -83,7 +95,7 @@
                 <input type="hidden" name="newspaper_id" value="{{ $newspaper->id }}" required />
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-success" value="Add Comment" />
+                <input type="submit" class="btn btn-success" value="Bình Luận" />
             </div>
         </form>
     </div>

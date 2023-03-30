@@ -23,6 +23,7 @@ class NewspaperFactory extends Factory
             'publish_date'=>$this->faker->date,
             'views_count'=>random_int(1,5000),
             'status'=>random_int(1,4),
+            'description'=>$this->faker->realText
 
             //
         ];

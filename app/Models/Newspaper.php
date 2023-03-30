@@ -20,6 +20,7 @@ class Newspaper extends Model
         'views_count',
         'status',
         'slug',
+        'description'
 
 
     ];

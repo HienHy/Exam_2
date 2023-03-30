@@ -22,6 +22,23 @@ class Admin
                 return $next($request);
             }
         }
+
+        if (auth()) {
+            $user = auth()->user();
+            if ($user->isBTV()) {
+                return $next($request);
+            }
+        }
+
+
+        if (auth()) {
+            $user = auth()->user();
+            if ($user->isPV()) {
+                return $next($request);
+            }
+        }
+
+
         return abort(404);
     }
 }
