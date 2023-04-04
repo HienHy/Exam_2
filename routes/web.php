@@ -38,6 +38,11 @@ Route::middleware(['auth','admin'])->prefix(env('ADMIN_PATH'))->group(function (
 
         Route::get('/create', [\App\Http\Controllers\NewspaperControllner::class, "create"]);
         Route::post('/create', [\App\Http\Controllers\NewspaperControllner::class, "save"]);
+        Route::get('/bai-viet-cua-toi', [\App\Http\Controllers\NewspaperControllner::class, "myNews"]);
+        Route::get('/edit/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "edit"])->name('newspaper.edit');
+        Route::put('/edit/{newspaper}', [\App\Http\Controllers\NewspaperControllner::class, "update"])->name('newspaper.update');
+
+
 
 
 
@@ -47,6 +52,7 @@ Route::middleware(['auth','admin'])->prefix(env('ADMIN_PATH'))->group(function (
 
     Route::prefix('user')->group(function (){
         Route::get('/list', [\App\Http\Controllers\UserControllner::class, "list"]);
+        Route::get('/create', [\App\Http\Controllers\UserControllner::class, "create"]);
 
 
 
@@ -76,7 +82,10 @@ Route::get("/the-thao", [\App\Http\Controllers\GuestControllner::class,"theThaoP
 Route::get("/thoi-su", [\App\Http\Controllers\GuestControllner::class,"thoiSuPage"]);
 Route::get("/van-hoa", [\App\Http\Controllers\GuestControllner::class,"vanHoaPage"]);
 Route::get("/xe", [\App\Http\Controllers\GuestControllner::class,"xePage"]);
-Route::post("/aa", [\App\Http\Controllers\CommentControllner::class,"store"]);
+//Route::post("/aa", [\App\Http\Controllers\CommentControllner::class,"store"]);
+
+Route::get('comments', 'CommentControllner@getComments');
+Route::post('comments', 'CommentControllner@postComments');
 
 
 

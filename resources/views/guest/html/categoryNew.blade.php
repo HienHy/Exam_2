@@ -10,7 +10,7 @@
                             <img src="{{$item->image}}"  height="169px" />
                             <div class="cn-content">
                                 <div class="cn-content-inner">
-                                    <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                    <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                     <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                             <img src="{{$item->image}}" height="169px" />
                             <div class="cn-content">
                                 <div class="cn-content-inner">
-                                    <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                    <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                     <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                                 <img src="{{$item->image}}" height="169px"  />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>
@@ -190,7 +190,7 @@
                                 <img src="{{$item->image}}" height="169px" />
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
-                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->created_at}}</a>
+                                        <a class="cn-date" href="{{url("single-page",["newspaper"=>$item->slug])}}"><i class="far fa-clock"></i>{{$item->publish_date}}</a>
                                         <a class="cn-title" href="{{url("single-page",["newspaper"=>$item->slug])}}">{{$item->name}}</a>
                                     </div>
                                 </div>

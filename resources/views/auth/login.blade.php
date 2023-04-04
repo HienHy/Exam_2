@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card-body register-card-body " >
-        <p class="login-box-msg">Login</p>
+        <p class="login-box-msg">Đăng Nhập</p>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -35,7 +35,7 @@
             <div class="row">
                 <!-- /.col -->
                 <div class="col-4">
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <button style="font-size: 14px" type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -45,13 +45,13 @@
             <p>- OR -</p>
             <a href="#" class="btn btn-block btn-primary">
                 <i class="fab fa-facebook mr-2"></i>
-                Sign up using Facebook
+                Đăng nhập với Facebook
             </a>
             <a href="#" class="btn btn-block btn-danger">
                 <i class="fab fa-google-plus mr-2"></i>
-                Sign up using Google+
+                Đăng nhập với Google+
             </a>
         </div>
 
-        <a href="{{url("/register")}}" class="text-center" >Register</a>
+        <a href="{{url("/register")}}" class="text-center" >Đăng Kí</a>
     </div>@endsection

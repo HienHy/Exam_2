@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Newspaper;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,9 +17,11 @@ class MailBack extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Newspaper  $newspaper)
+
     {
         //
+        $this->newpaper=$newspaper;
     }
 
     /**
@@ -27,7 +30,11 @@ class MailBack extends Mailable
      * @return $this
      */
     public function build()
+
     {
-        return $this->view('mail.mail-thong-bao-khong-duyet');
+
+        return $this->view('mail.mail-thong-bao-khong-duyet',[
+            'newspaper'=>$this->newpaper
+        ]);
     }
 }

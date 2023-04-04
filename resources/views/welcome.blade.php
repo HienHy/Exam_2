@@ -55,9 +55,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{$soLuongPhongVien}}</h3>
 
-                    <p>Product</p>
+                    <p>Số Lượng Phóng Viên</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person-add"></i>

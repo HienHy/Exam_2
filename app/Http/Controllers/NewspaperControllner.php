@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\KhongDuyetBai;
 use App\Mail\MailBack;
 use App\Models\Admin;
 use App\Models\Newspaper;
@@ -37,13 +38,13 @@ class NewspaperControllner extends Controller
     {
 
         $title = Title::all();
-        $author =DB::table('users')
+        $author = DB::table('users')
             ->leftJoin('admins', 'users.id', '=', 'admins.user_id')
-            ->where('role','=','PV')
+            ->where('role', '=', 'PV')
             ->get();
 
 
-        return view('admin.newspaper.create', compact('title', 'author','newspaper'));
+        return view('admin.newspaper.create', compact('title', 'author', 'newspaper'));
     }
 
 
@@ -73,7 +74,6 @@ class NewspaperControllner extends Controller
         );
 
 
-
         $data = $request->get('content');
         $name = $request->get('name');
         $title = $request->get('title_id');
@@ -85,13 +85,13 @@ class NewspaperControllner extends Controller
         $publish_date = null;
 
 
-        if ($nxb === '0'){
+        if ($nxb === '0') {
             $status = 1;
             $publish_date = null;
-        }else if ($nxb === '1'){
-            $status =3;
-            $publish_date =  Carbon::now('Asia/Ho_Chi_Minh');
-        }else if ($nxb === '2'){
+        } else if ($nxb === '1') {
+            $status = 3;
+            $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
+        } else if ($nxb === '2') {
 
             $status = 2;
             $publish_date = $request->get('publish_date');
@@ -119,11 +119,10 @@ class NewspaperControllner extends Controller
                 'slug' => $slug,
                 'image' => $image,
                 'description' => $description,
-                'status'=>$status,
-                'publish_date'=>$publish_date
+                'status' => $status,
+                'publish_date' => $publish_date
 
             ]);
-
 
 
             return redirect()->to('/admin/newspaper/list');
@@ -160,7 +159,6 @@ class NewspaperControllner extends Controller
     }
 
 
-
     public function duyetBai(Newspaper $newspaper)
     {
 
@@ -175,13 +173,126 @@ class NewspaperControllner extends Controller
 
     public function khongDuyetBai(Newspaper $newspaper)
     {
-        $mail =$newspaper->User->email;
-
-        Mail::to($mail)->send(new MailBack());
+        event(new KhongDuyetBai($newspaper));
 
         return redirect()->to('/admin/newspaper/list');
 
     }
+
+    public function myNews(Request $request)
+    {
+
+        $search = $request->get('search');
+        $title_id = $request->get('title_id');
+
+        $title = Title::all();
+        $author = auth()->user()->id;
+        $data = Newspaper::where('user_id', '=', $author)->TitleFiler($title_id)->Search("%$search%")->orderBy("id", "asc")->paginate(10);
+
+        return view('admin.newspaper.bai-viet-cua-toi', compact('search', 'title_id', 'title', 'data'));
+    }
+
+    public function edit(Newspaper $newspaper)
+    {
+
+
+        $title = Title::all();
+        $author = User::all();
+        return view('admin.newspaper.edit', compact('title', 'newspaper', 'author'));
+    }
+
+    public function update(Newspaper $newspaper, Request $request)
+    {
+
+
+        $request->validate([
+
+            'name' => 'required|string|min:6',
+            'content' => 'required',
+            'title_id' => 'required',
+            'author_id' => 'required',
+            'description' => 'required|string|min:50',
+            "image" => "nullable|image|mimes:jpg,png,jpeg",
+
+        ], [
+
+                'required' => 'Vui lòng nhập nội dung',
+                "string" => "Phải nhập vào là một chuỗi văn bản",
+                "min" => "Phải nhập :attribute  tối thiểu :min",
+                'image:nullable' => "image null",
+                'image:image' => " image",
+                'image:mimes' => "type",
+
+
+            ]
+        );
+
+
+        $data = $request->get('content');
+        $name = $request->get('name');
+        $title = $request->get('title_id');
+        $description = $request->get('description');
+        $author_id = $request->get('author_id');
+
+        $nxb = $request->get('nxb_date');
+        $status = 1;
+        $publish_date = null;
+
+
+        if ($nxb === '0') {
+            $status = 1;
+            $publish_date = null;
+        } else if ($nxb === '1') {
+            $status = 3;
+            $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
+        } else if ($nxb === '2') {
+
+            $status = 2;
+            $publish_date = $request->get('publish_date');
+        }
+
+        $slug = Str::slug($request->name) . random_int(1, 1000);
+
+        try {
+            $image = null;
+            if ($request->hasFile("image")) {
+                $file = $request->file("image");
+                $fileName = time() . $file->getClientOriginalName();
+                //            $ext = $file->getClientOriginalExtension();
+                //            $fileName = time().".".$ext;
+                $path = public_path("uploads");
+                $file->move($path, $fileName);
+                $image = "uploads/" . $fileName;
+            }
+            $newspaper->update
+            ([
+                'name' => $name,
+                'content' => $data,
+                'title_id' => $title,
+                'user_id' => $author_id,
+                'slug' => $slug,
+                'image' => $image,
+                'description' => $description,
+                'status' => $status,
+                'publish_date' => $publish_date
+
+            ]);
+
+
+            if (auth()->user()->Admin->role == \App\Models\Admin::ADMIN || auth()->user()->Admin->role == \App\Models\Admin::BTV) {
+                return redirect()->to('/admin/newspaper/list');
+            }
+            return redirect()->to('/admin/newspaper/bai-viet-cua-toi');
+
+
+        } catch (\Throwable $e) {
+
+            return redirect()->back()->with("error", $e->getMessage());
+        }
+
+
+    }
+
 
 
 

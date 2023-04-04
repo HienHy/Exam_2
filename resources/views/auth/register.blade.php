@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card-body register-card-body" >
-        <p class="login-box-msg">Register a new membership</p>
+        <p class="login-box-msg">Đăng kí</p>
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -74,13 +74,14 @@
             <p>- OR -</p>
             <a href="#" class="btn btn-block btn-primary">
                 <i class="fab fa-facebook mr-2"></i>
-                Sign up using Facebook
+                Đăng nhập với Facebook
             </a>
             <a href="#" class="btn btn-block btn-danger">
                 <i class="fab fa-google-plus mr-2"></i>
-                Sign up using Google+
+                Đăng nhập với Google+
+
             </a>
         </div>
 
-        <a href="{{url("/login")}}" class="text-center">I already have a membership</a>
+        <a href="{{url("/login")}}" class="text-center">Đăng kí</a>
     </div>@endsection

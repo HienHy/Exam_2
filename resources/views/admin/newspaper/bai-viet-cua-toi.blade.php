@@ -3,7 +3,7 @@
 @section("content-header")
     <div class="row mb-2">
         <div class="col-sm-12">
-            <h1 class="text-center h1 display-3  bg-blue text-white" >Danh Sách Bài Viết</h1>
+            <h1 class="text-center h1 display-3  bg-blue text-white" >Bài Viết Của Tôi</h1>
         </div><!-- /.col -->
     </div><!-- /.row -->
 @endsection
@@ -15,14 +15,14 @@
 
 
             <div class="card-tools">
-                <form action="{{url("/admin/newspaper/list")}}" method="get">
+                <form action="{{url("/admin/newspaper/bai-viet-cua-toi")}}" method="get">
 
 
 
                     <div class="input-group input-group-sm" style="width: 550px;">
 
                         <select name="title_id" class="mr-1">
-                            <option value="0">Chọn chủ đề..</option>
+                            <option value="0">Choose Title..</option>
 
                             @foreach($title as $item)
                                 <option @if(app("request")->input("title_id")==$item->id) selected @endif  value="{{$item->id}}"> {{$item->name}}
@@ -53,12 +53,11 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th>Name</th>
-{{--                    <th>Content</th>--}}
+                    {{--                    <th>Content</th>--}}
                     <th>Image</th>
                     <th>Author</th>
                     <th>Title</th>
-                    <th>Publish_date</th>
-                    <th>Status</th>
+                                        <th>Status</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -67,32 +66,31 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-{{--                        <td>{{$item->content}}</td>--}}
-                        <td><img src="/{{$item->image}}" alt="" srcset="" width="80" height="80"> </td>
+                        {{--                        <td>{{$item->content}}</td>--}}
+                        <td><img src="{{$item->image}}" alt="" srcset="" width="80" height="80"> </td>
                         <td>{{$item->User->name}}</td>
                         <td>{{$item->Title->name}}</td>
-                        <td>{{$item->publish_date}}</td>
                         <td>
                             @switch($item->status)
-                             @case(1)
+                                @case(1)
                                     <span class="badge bg-warning">Chưa duyệt</span>
-                                @break;
+                                    @break;
                                 @case(2)
 
-                                <span class="badge bg-warning">Chưa xuất bản</span>
-                                @break;
+                                    <span class="badge bg-warning">Chưa xuất bản</span>
+                                    @break;
                                 @case(3)
 
-                                <span class="badge bg-success">Đã xuất bản</span>
-                                @break;
+                                    <span class="badge bg-success">Đã xuất bản</span>
+                                    @break;
                                 @default
-                                @break;
+                                    @break;
 
                             @endswitch
                         </td>
-                        <td><a href="{{route("newspaper.details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a>
-                            <a href="{{route("newspaper.edit",["newspaper"=>$item->id])}}" class="btn-outline-info btn">Chỉnh Sửa</a>
 
+                        <td><a href="{{route("newspaper.details",["newspaper"=>$item->slug])}}" class="btn-outline-info btn">Chi Tiết</a>
+                        <a href="{{route("newspaper.edit",["newspaper"=>$item->id])}}" class="btn-outline-info btn">Chỉnh Sửa</a>
                         </td>
 
                     </tr>
