@@ -20,6 +20,7 @@
 
 
     {{--    @include('guest.html.sliderSection')--}}
+
     @yield('main-content')
     @include('guest.html.footer')
 

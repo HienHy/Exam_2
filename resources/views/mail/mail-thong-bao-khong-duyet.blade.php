@@ -8,9 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-@foreach($newpaper as $item)
 <h1>Yêu Cầu Chỉnh Sửa Bài Viết</h1>
-    <h2>Tên bài viết :: {{$item->name}}</h2>
-@endforeach
+    <h2>Tên bài viết :: {{$newspaper->name}}</h2>
 </body>
 </html>

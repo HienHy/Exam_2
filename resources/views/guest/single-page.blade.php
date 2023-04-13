@@ -4,13 +4,14 @@
     <style>
         img{
             width: 100%;
-            height: 100%;
+            object-fit: cover;
         }
         .mn-list{
             padding: 15px 0;
         }
         .mn-title{
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 @endsection
@@ -22,15 +23,22 @@
             <li class="breadcrumb-item active" aria-current="page">{{$newspaper->Title->name}}</li>
         </ol>
     </nav>
-    <h5><i class="fa fa-eye"></i>{{$newspaper->views_count}} </h5>
-    <h6><i class="fa fa-user"></i>{{$newspaper->User->name}} </h6>
+
 @endsection
 @section('main-content')
-
-
+<div class="container">
+    <div style="display: flex;width: 60%">
+        <h6><i class="fa fa-user mx-4"></i>{{$newspaper->User->name}} </h6>
+        <h6><i class="fa fa-eye mx-4" ></i>{{$newspaper->views_count}} </h6>
+        <h6 class="mn-date mx-4"><i class="far fa-clock"></i>{{$newspaper->publish_date}}</h6>
+    </div>
     <!-- Single News Start-->
     <div class="single-news">
         <div class="container-fluid">
+            <h1 style="font-weight: bold">{{$newspaper->name}}</h1>
+
+
+
             <div class="row">
                 <div  class="col-md-8 ">
                         {!!$newspaper->content!!}
@@ -48,7 +56,6 @@
                                                 </div>
                                                 <div class="col-6 mn-content">
                                                     <a class="mn-title" href="{{url("single-page",["newspaper"=>$views->slug])}}">{{$views->name}}</a>
-                                                    <a class="mn-date" href=""><i class="far fa-clock"></i>{{$views->created_at}}</a>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -94,43 +101,18 @@
         <form method="post" action="{{url('/aa')}}">
             @csrf
             <div class="form-group">
-                <textarea class="form-control" name="content" required></textarea>
+                <textarea class="form-control" name="content" required id="content"></textarea>
                 <input type="hidden" name="newspaper_id" value="{{ $newspaper->id }}" required />
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" value="Bình Luận" />
             </div>
         </form>
-    </div>
-    <div class="col-md-4">
-        <div class="sidebar">
-
-            <div class="sidebar-widget">
-                <h2><i class="fas fa-align-justify"></i>Tags</h2>
-                <div class="tags">
-                    <a href="">National</a>
-                    <a href="">International</a>
-                    <a href="">Economics</a>
-                    <a href="">Politics</a>
-                    <a href="">Lifestyle</a>
-                    <a href="">Technology</a>
-                    <a href="">Trades</a>
-                    <a href="">National</a>
-                    <a href="">International</a>
-                    <a href="">Economics</a>
-                    <a href="">Politics</a>
-                    <a href="">Lifestyle</a>
-                    <a href="">Technology</a>
-                    <a href="">Trades</a>
-                </div>
-            </div>
-
-
-        </div>
+{{--        <button type="botton" class="btn  btn-primary" id="click-comment">Comment</button>--}}
     </div>
 
 
-@endsection
-@section('after-js')
+</div>
+
 
 @endsection

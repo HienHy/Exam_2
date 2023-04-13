@@ -16,4 +16,8 @@ class Title extends Model
 
     ];
     use HasFactory;
+    public function Newspaper(){
+
+        return $this->hasMany(Newspaper::class);
+    }
 }

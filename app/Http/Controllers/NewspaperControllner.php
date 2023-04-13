@@ -28,7 +28,7 @@ class NewspaperControllner extends Controller
         $title = Title::all();
 
 
-        $data = Newspaper::TitleFiler($title_id)->Search("%$search%")->orderBy("created_at", "desc")->paginate(20);
+        $data = Newspaper::TitleFiler($title_id)->Search("%$search%")->orderBy("publish_date", "desc")->paginate(20);
 
         return view('admin.newspaper.list', compact('data', 'title'));
     }
@@ -86,12 +86,9 @@ class NewspaperControllner extends Controller
 
 
         if ($nxb === '0') {
-            $status = 1;
-            $publish_date = null;
-        } else if ($nxb === '1') {
             $status = 3;
             $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
-        } else if ($nxb === '2') {
+        } else if ($nxb === '1') {
 
             $status = 2;
             $publish_date = $request->get('publish_date');
@@ -135,20 +132,6 @@ class NewspaperControllner extends Controller
 
     }
 
-    public function choDuyet(Request $request)
-    {
-        $search = $request->get('search');
-        $title_id = $request->get('title_id');
-
-
-        $title = Title::all();
-
-
-        $data = Newspaper::where('status', '=', '1')->TitleFiler($title_id)->Search("%$search%")->orderBy("id", "asc")->paginate(10);
-
-        return view('admin.newspaper.choDuyet', compact('data', 'title'));
-    }
-
 
     public function details(Newspaper $newspaper)
     {
@@ -159,20 +142,35 @@ class NewspaperControllner extends Controller
     }
 
 
-    public function duyetBai(Newspaper $newspaper)
+    public function lenLich(Newspaper $newspaper, Request $request)
+
     {
+        $nxb = $request->get('nxb_date');
+        $status = 1;
+        $publish_date = null;
+        if ($nxb === '0') {
+            $status = 3;
+            $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
+        } else if ($nxb === '1') {
+
+            $status = 2;
+            $publish_date = $request->get('publish_date');
+        }
 
 
         $newspaper->update([
-            'status' => 2
+            'status' => $status,
+            'publish_date' => $publish_date
         ]);
 
         return redirect()->to('/admin/newspaper/list');
 
     }
 
+
     public function khongDuyetBai(Newspaper $newspaper)
     {
+
         event(new KhongDuyetBai($newspaper));
 
         return redirect()->to('/admin/newspaper/list');
@@ -240,12 +238,9 @@ class NewspaperControllner extends Controller
 
 
         if ($nxb === '0') {
-            $status = 1;
-            $publish_date = null;
-        } else if ($nxb === '1') {
             $status = 3;
             $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
-        } else if ($nxb === '2') {
+        } else if ($nxb === '1') {
 
             $status = 2;
             $publish_date = $request->get('publish_date');
@@ -294,17 +289,21 @@ class NewspaperControllner extends Controller
     }
 
 
+    public function goBai(Newspaper $newspaper)
+    {
 
 
+        $newspaper->update([
+            'status' => 4
+        ]);
+        return redirect()->to('/admin/newspaper/list');
+    }
+    public function xoaBai(Newspaper $newspaper)
+    {
 
-
-
-//
-//
-//   public function update(Newspaper $newspaper){
-//
-//
-//   }
+$newspaper->delete();
+        return redirect()->to('/admin/newspaper/list');
+    }
 
 
 }

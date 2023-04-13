@@ -7,7 +7,7 @@
                     <img src="{{$newspaper->image}}" height="550px" />
                     <div class="tn-content">
                         <div class="tn-content-inner">
-                            <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                            <a class="tn-date" href=""><i class="far fa-clock"></i>{{$newspaper->publish_date}}</a>
                             <a class="tn-title-name" href="{{url('/kinh-doanh')}}">{{$newspaper->Title->name}}</a>
                             <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper->slug])}}">{{$newspaper->name}}</a>
                         </div>
@@ -24,7 +24,7 @@
                             <img src="{{$newspaper1->image}}"height="260px"/>
                             <div class="tn-content">
                                 <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                    <a class="tn-date" href=""><i class="far fa-clock"></i>{{$newspaper1->publish_date}}</a>
                                     <a class="tn-title-name" href="{{url('/van-hoa')}}">{{$newspaper1->Title->name}}</a>
 
                                     <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper1->slug])}}">{{$newspaper1->name}}</a>
@@ -42,7 +42,7 @@
                             <img src="{{$newspaper2->image}}"height="260px" />
                             <div class="tn-content">
                                 <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                    <a class="tn-date" href=""><i class="far fa-clock"></i>{{$newspaper2->publish_date}}</a>
                                     <a class="tn-title-name" href="{{url('/the-gioi')}}">{{$newspaper2->Title->name}}</a>
 
                                     <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper2->slug])}}">{{$newspaper2->name}}</a>
@@ -60,7 +60,7 @@
                             <img src="{{$newspaper3->image}}" height="260px" />
                             <div class="tn-content">
                                 <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                    <a class="tn-date" href=""><i class="far fa-clock"></i>{{$newspaper3->publish_date}}</a>
                                     <a class="tn-title-name" href="{{url('/thoi-su')}}">{{$newspaper3->Title->name}}</a>
                                     <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper3->slug])}}">{{$newspaper3->name}}</a>
                                 </div>
@@ -76,7 +76,7 @@
                             <img src="{{$newspaper4->image}}"height="260px" />
                             <div class="tn-content">
                                 <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                    <a class="tn-date" href=""><i class="far fa-clock"></i>{{$newspaper4->publish_date}}</a>
                                     <a class="tn-title-name" href="{{url('/giai-tri')}}">{{$newspaper4->Title->name}}</a>
 
                                     <a class="tn-title" href="{{url("single-page",["newspaper"=>$newspaper4->slug])}}">{{$newspaper4->name}}</a>

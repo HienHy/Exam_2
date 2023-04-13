@@ -1,6 +1,6 @@
 
-@foreach($comments as $comment)
-<div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
+@foreach($comments as $index=>$comment)
+<div id="display-comment{{$index}}" class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
 
 <p><strong>{{ $comment->user->name }}</strong>  {{ $comment->content }}</p>
 

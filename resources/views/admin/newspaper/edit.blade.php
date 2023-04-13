@@ -52,8 +52,8 @@
                 </select>
 
 
-                <textarea style="margin-top: 15px;" class="form-control" id="exampleFormControlTextarea1" name="name"
-                          placeholder="Tiêu Đề" rows="3" required>{{$newspaper->name}}</textarea>
+                <input style="margin-top: 15px;" class="form-control" id="exampleFormControlTextarea1" name="name"
+                          placeholder="Tiêu Đề" rows="3" required>{{$newspaper->name}}</input>
                 @error("name")
                 <p class="text-danger">{{$message}}</p>
                 @enderror
@@ -121,9 +121,6 @@
 
                 <select name="nxb_date" class="mr-2 custom-select" id="click" onchange="onTypeChange(this.value)">
                     <option selected value="0">
-                        Ngày xuất bản
-                    </option>
-                    <option value="1">
                         Xuất bản ngay
                     </option>
                     <option value="2">
@@ -188,9 +185,9 @@
 
         const onTypeChange = (value) => {
 
-            if (value ==='2' ) {
+            if (value ==='1' ) {
                 publish_date.show();
-            }else    if (value ==='1'|| value ==='0') {
+            }else    if ( value ==='0') {
                 publish_date.hide();
             }
 

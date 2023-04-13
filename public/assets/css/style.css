@@ -9,14 +9,14 @@ body {
 }
 
 a {
-    color: #E47A2E;
+    color: black;
     transition: 0.5s;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: #353535;
+    color: orange;
     outline: none;
     text-decoration: none;
 }

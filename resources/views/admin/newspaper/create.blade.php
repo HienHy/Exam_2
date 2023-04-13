@@ -43,8 +43,10 @@
                 </select>
 
 
-                <textarea style="margin-top: 15px;" class="form-control" id="exampleFormControlTextarea1" name="name"
-                          placeholder="Tiêu Đề" rows="3" required></textarea>
+                <input style="margin-top: 15px;" class="form-control" id="exampleFormControlTextarea1" name="name"
+                          placeholder="Tiêu Đề" rows="3" required></input>
+                @error('name') <p class="text-danger">{{$message}}</p> @enderror
+
 
             </div>
 
@@ -90,23 +92,20 @@
         </section>
         @if(auth()->user()->Admin->role == \App\Models\Admin::ADMIN || auth()->user()->Admin->role == \App\Models\Admin::BTV)
 
-        <div class="col-6">
+            <div class="col-6">
 
-            <select name="nxb_date" class="mr-2 custom-select" id="click" onchange="onTypeChange(this.value)">
-                <option selected value="0">
-                    Ngày xuất bản
-                </option>
-                <option value="1">
-                    Xuất bản ngay
-                </option>
-                <option value="2">
-                    Lên lịch xuất bản
-                </option>
-            </select>
-            <input class="form-control float-right" type="datetime-local" name="publish_date" id="aaaa">
-        </div>
+                <select name="nxb_date" class="mr-2 custom-select" id="click" onchange="onTypeChange(this.value)">
+                    <option selected value="0">
+                        Xuất bản ngay
+                    </option>
+                    <option value="1">
+                        Lên lịch xuất bản
+                    </option>
+                </select>
+                <input class="form-control float-right" type="datetime-local" name="publish_date" id="aaaa">
+            </div>
         @endif
-@error('publish_date') {{$message}} @enderror
+        @error('publish_date') {{$message}} @enderror
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">Đăng Bài</button>
         </div>
@@ -161,9 +160,9 @@
 
         const onTypeChange = (value) => {
 
-            if (value ==='2' ) {
+            if (value === '1') {
                 publish_date.show();
-            }else    if (value ==='1'|| value ==='0') {
+            } else if (value === '0') {
                 publish_date.hide();
             }
 

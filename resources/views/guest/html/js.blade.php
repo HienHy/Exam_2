@@ -7,3 +7,33 @@
 
 <!-- Template Javascript -->
 <script src="/assets/js/main.js"></script>
+
+<script>
+    let comment= $('#content');
+
+    let click=$('#click-comment');
+    click.on('click',()=>{
+        confirm(comment.val());
+    })
+
+let a = async ()=>{
+      $.ajax({
+         url:"{{route('test.ajax')}}",
+         type:"post",
+         data:{
+             '_token':'{{csrf_token()}}',
+             'data':comment.val(),
+             'user_id':
+         } ,
+          success:(rp)=>{
+             if(rp.data){
+
+             }
+             console.log(rq)
+          }
+      })
+}
+
+
+</script>
+

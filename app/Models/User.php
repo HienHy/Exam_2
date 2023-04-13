@@ -47,6 +47,13 @@ class User extends Authenticatable
 
         return $this->hasOne(Admin::class);
     }
+    public function Comment()
+    {
+
+        return $this->hasMany(Comment::class);
+    }
+
+
 
 
     public function isAdmin()
@@ -79,4 +86,8 @@ class User extends Authenticatable
         return false;
     }
 
+
+
 }
+
+

@@ -13,6 +13,24 @@ class CommentControllner extends Controller
 {
     //
 
+    public function  list()
+    {
+
+        $data = Comment::all();
+
+        return view('admin.comment.list', compact('data'));
+
+
+    }
+
+    public function delete(Comment $comment)
+    {
+
+        $comment->delete();
+        return redirect()->to('/admin/comment/list');
+
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -45,6 +63,15 @@ class CommentControllner extends Controller
 
     }
 
+    public function demoAjax(Request $request)
+    {
+        //
+        if ($request->get('content') !== null) {
+
+        }
+
+        return response()->json(['data' => true]);
+    }
 
 
 }

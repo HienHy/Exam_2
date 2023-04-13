@@ -22,12 +22,18 @@ class Comment extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function newspaper(){
+
+        return $this->belongsTo(Newspaper::class);
+    }
 
 
     public function replies()
     {
         return $this->hasMany(Comment::class, 'parent_id');
     }
+
+
 
     use HasFactory;
 }

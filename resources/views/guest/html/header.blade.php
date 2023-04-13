@@ -1,3 +1,7 @@
+
+
+
+
 <!-- Top Header Start -->
 <div class="top-header">
     <div class="container">
@@ -16,12 +20,29 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4">
-                <div class="social">
+                <div class="social" style="display: flex" >
                     <a href=""><i class="fab fa-twitter"></i></a>
                     <a href=""><i class="fab fa-facebook"></i></a>
                     <a href=""><i class="fab fa-linkedin"></i></a>
                     <a href=""><i class="fab fa-instagram"></i></a>
                     <a href=""><i class="fab fa-youtube"></i></a>
+
+                  @guest
+                         <a href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
+                     @endguest
+
+                     @auth
+                         <form action="{{route('logout')}}" method="post">
+                             @csrf
+                             <button type="submit">
+                                 <i class="fa fa-user"> logout</i>
+                             </button>
+
+                         </form>
+
+                     @endauth
+
+
 
 
 
@@ -61,20 +82,7 @@
 
 
 
-                    @guest
-                        <a class="nav-item nav-link" href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
-                    @endguest
 
-                    @auth
-                        <form action="{{route('logout')}}" method="post">
-                            @csrf
-                            <button type="submit">
-                                <i class="fas fa-user"> logout</i>
-                            </button>
-
-                        </form>
-
-                    @endauth
                 </div>
             </div>
         </nav>
