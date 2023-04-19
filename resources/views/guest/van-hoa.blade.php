@@ -22,7 +22,7 @@
                                             <img src="{{$van_hoa->image}}" />
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="">{{$van_hoa->name}}</a>
+                                            <a class="mn-title"  href="{{url("single-page",["newspaper"=>$van_hoa->slug])}}">{{$van_hoa->name}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>{{$van_hoa->publish_date}}</a>
                                             <p>
                                                 {{$van_hoa->description}}                                            </p>

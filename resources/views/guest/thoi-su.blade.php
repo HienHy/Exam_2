@@ -22,7 +22,7 @@
                                             <img src="{{$thoi_su->image}}" />
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="">{{$thoi_su->name}}</a>
+                                            <a class="mn-title"  href="{{url("single-page",["newspaper"=>$thoi_su->slug])}}">{{$thoi_su->name}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>{{$thoi_su->publish_date}}</a>
                                             <p>
                                                 {{$thoi_su->description}}                                            </p>

@@ -7,8 +7,7 @@
     <a href="" id="reply"></a>
 
 
-
-
+    
     <form method="post" action="{{url('/aa') }}">
     @csrf
     <div class="form-group">

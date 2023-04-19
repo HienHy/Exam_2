@@ -52,8 +52,8 @@
                 </select>
 
 
-                <input style="margin-top: 15px;" class="form-control" id="exampleFormControlTextarea1" name="name"
-                          placeholder="Tiêu Đề" rows="3" required>{{$newspaper->name}}</input>
+                <input type="text" style="margin-top: 15px;" class="form-control" id="exampleFormControlTextarea1" name="name"
+                          placeholder="Tiêu Đề"  required value="{{$newspaper->name}}" >
                 @error("name")
                 <p class="text-danger">{{$message}}</p>
                 @enderror
@@ -73,7 +73,7 @@
                     </label>
                     <div class="input-group">
                         <div class="custom-file">
-                            <input name="image" type="file" class="custom-file-input" id="exampleInputFile" required
+                            <input name="image" type="file" class="custom-file-input" value="../{{$newspaper->image}}" id="exampleInputFile" required
                                    size="1000000">
                             <label class="custom-file-label" for="exampleInputFile">Chọn Ảnh Bìa</label>
                             @error('image') <p class="text-danger">{{$message}}</p> @enderror
@@ -123,14 +123,16 @@
                     <option selected value="0">
                         Xuất bản ngay
                     </option>
-                    <option value="2">
+                    <option value="1">
                         Lên lịch xuất bản
                     </option>
                 </select>
-                <input class="form-control float-right" type="datetime-local" name="publish_date" id="aaaa">
+                <input class="form-control float-right" type="date" name="publish_date" id="aaaa">
+                @error("publish_date")
+                <p class="text-danger">{{$message}}</p>
+                @enderror
             </div>
         @endif
-        @error('publish_date') {{$message}} @enderror
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">Cập Nhật</button>
         </div>

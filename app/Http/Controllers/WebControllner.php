@@ -17,7 +17,7 @@ class WebControllner extends Controller
         $today = Carbon::now('Asia/Ho_Chi_Minh');
         $today->toDayDateTimeString();
 
-        $tongLuongLuotXem=Newspaper::sum('views_count');
+        $soLuongBaiVietChuaDuyet=Newspaper::where('status','=','1')->count();
         $soLuongBaiViet=Newspaper::count('id');
         $soLuongPhongVien = Admin::where('role','=','PV')->count();
         $soLuongBinhLuan = Comment::count('id');
@@ -46,7 +46,7 @@ class WebControllner extends Controller
 
 
 
-        return view("welcome",compact('tongLuongLuotXem','today','soLuongBaiViet','soLuongPhongVien','soLuongBinhLuan','categories_names','category_products_counts','newspaper_count'));
+        return view("welcome",compact('soLuongBaiVietChuaDuyet','today','soLuongBaiViet','soLuongPhongVien','soLuongBinhLuan','categories_names','category_products_counts','newspaper_count'));
     }
 
 }

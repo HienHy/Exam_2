@@ -97,14 +97,17 @@
                         <td>
                             <a href="{{route("newspaper.details",["newspaper"=>$item->slug])}}"
                                class="btn-outline-info btn ">Chi Tiết</a>
+                            @if($item->status == 4 || $item->status == 1)
+
                             <a href="{{route("newspaper.edit",["newspaper"=>$item->id])}}" class="btn-outline-info btn">Chỉnh
                                 Sửa</a>
+                            @endif
                             @if($item->status == 3)
 
                                 <a href="{{route("newspaper.gobai",["newspaper"=>$item->id])}}"
-                                   class="btn-outline-info btn">Gỡ bài</a>
+                                   onclick=" return confirm('Bạn có chắc muốn gỡ bài viết???')"  class="btn-outline-info btn">Gỡ bài</a>
                             @endif
-                            @if($item->status == 4)
+                            @if($item->status == 4 || $item->status == 1)
                                 <form method="post" action="{{route("newspaper.xoabai",["newspaper"=>$item->id])}}">
                                     @method("DELETE")
                                     @csrf

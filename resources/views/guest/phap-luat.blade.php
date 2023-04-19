@@ -22,7 +22,7 @@
                                             <img src="{{$phap_luat->image}}" />
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="">{{$phap_luat->name}}</a>
+                                            <a class="mn-title" href="{{url("single-page",["newspaper"=>$phap_luat->slug])}}">{{$phap_luat->name}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>{{$phap_luat->publish_date}}</a>
                                             <p>
                                                 {{$phap_luat->description}}                                            </p>

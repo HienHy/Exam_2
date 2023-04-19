@@ -28,7 +28,7 @@ class NewspaperControllner extends Controller
         $title = Title::all();
 
 
-        $data = Newspaper::TitleFiler($title_id)->Search("%$search%")->orderBy("publish_date", "desc")->paginate(20);
+        $data = Newspaper::TitleFiler($title_id)->Search("%$search%")->orderBy("created_at", "desc")->paginate(20);
 
         return view('admin.newspaper.list', compact('data', 'title'));
     }
@@ -38,9 +38,8 @@ class NewspaperControllner extends Controller
     {
 
         $title = Title::all();
-        $author = DB::table('users')
-            ->leftJoin('admins', 'users.id', '=', 'admins.user_id')
-            ->where('role', '=', 'PV')
+        $author = Admin::where('role', '=', 'PV')
+            ->where('status', '=', 1)
             ->get();
 
 
@@ -59,6 +58,7 @@ class NewspaperControllner extends Controller
             'author_id' => 'required',
             'description' => 'required|string|min:50',
             "image" => "nullable|image|mimes:jpg,png,jpeg",
+            'publish_date' => 'after_or_equal'
 
         ], [
 
@@ -81,6 +81,7 @@ class NewspaperControllner extends Controller
         $author_id = $request->get('author_id');
 
         $nxb = $request->get('nxb_date');
+
         $status = 1;
         $publish_date = null;
 
@@ -89,6 +90,7 @@ class NewspaperControllner extends Controller
             $status = 3;
             $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
         } else if ($nxb === '1') {
+
 
             $status = 2;
             $publish_date = $request->get('publish_date');
@@ -120,6 +122,9 @@ class NewspaperControllner extends Controller
                 'publish_date' => $publish_date
 
             ]);
+            if (auth()->user()->Admin->role == 'PV') {
+                return redirect()->to('/admin/newspaper/bai-viet-cua-toi');
+            }
 
 
             return redirect()->to('/admin/newspaper/list');
@@ -178,6 +183,7 @@ class NewspaperControllner extends Controller
     }
 
     public function myNews(Request $request)
+
     {
 
         $search = $request->get('search');
@@ -203,6 +209,8 @@ class NewspaperControllner extends Controller
     {
 
 
+
+
         $request->validate([
 
             'name' => 'required|string|min:6',
@@ -211,6 +219,8 @@ class NewspaperControllner extends Controller
             'author_id' => 'required',
             'description' => 'required|string|min:50',
             "image" => "nullable|image|mimes:jpg,png,jpeg",
+
+
 
         ], [
 
@@ -236,15 +246,29 @@ class NewspaperControllner extends Controller
         $status = 1;
         $publish_date = null;
 
-
         if ($nxb === '0') {
             $status = 3;
-            $publish_date = Carbon::now('Asia/Ho_Chi_Minh');
+            $publish_date =Carbon::now('Asia/Ho_Chi_Minh');
+
+
         } else if ($nxb === '1') {
+            $request->validate([
+                'publish_date'=>'after_or_equal:today'
+
+            ],[
+                'after_or_equal' => 'Ngày xuất bản không thể ở quá khứ'
+
+            ]);
 
             $status = 2;
             $publish_date = $request->get('publish_date');
         }
+
+
+
+
+
+
 
         $slug = Str::slug($request->name) . random_int(1, 1000);
 
@@ -259,6 +283,8 @@ class NewspaperControllner extends Controller
                 $file->move($path, $fileName);
                 $image = "uploads/" . $fileName;
             }
+
+
             $newspaper->update
             ([
                 'name' => $name,
@@ -298,10 +324,11 @@ class NewspaperControllner extends Controller
         ]);
         return redirect()->to('/admin/newspaper/list');
     }
+
     public function xoaBai(Newspaper $newspaper)
     {
 
-$newspaper->delete();
+        $newspaper->delete();
         return redirect()->to('/admin/newspaper/list');
     }
 

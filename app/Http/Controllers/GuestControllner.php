@@ -16,16 +16,16 @@ class GuestControllner extends Controller
         $dt = Carbon::now('Asia/Ho_Chi_Minh');
         $dt->toDayDateTimeString();
 
-        $news_thoisu = Newspaper::where('title_id', '=', '4')
-            ->where('status', '=', '3')
+        $news_thoisu = Newspaper::
+            where('status', '=', '3')
             ->where('publish_date', '<=', $dt)
             ->orderBy("publish_date", 'desc')->limit(1)->get();
-        $news_thoisu1 = Newspaper::where('title_id', '=', '9')
+        $news_thoisu1 = Newspaper::where('id', '<>', $news_thoisu->first()->id)
             ->where('status', '=', '3')
-            ->where('publish_date', '<=', $dt)->orderBy("publish_date", 'desc')->limit(1)->get();
-        $news_thoisu2 = Newspaper::where('title_id', '=', '2')
+            ->where('publish_date', '<=', $dt)->orderBy("publish_date", 'desc')->limit(4)->get();
+        $index_thoisu = Newspaper::where('title_id', '=', '1')
             ->where('status', '=', '3')
-            ->where('publish_date', '<=', $dt)->orderBy("publish_date", 'desc')->limit(1)->get();
+            ->where('publish_date', '<=', $dt)->orderBy("publish_date", 'desc')->limit(3)->get();
         $news_thoisu3 = Newspaper::where('title_id', '=', '1')
             ->where('status', '=', '3')
             ->where('publish_date', '<=', $dt)->orderBy("publish_date", 'desc')->limit(1)->get();
@@ -41,7 +41,7 @@ class GuestControllner extends Controller
             ->where('publish_date', '<=', $dt)->
             Where('id', '<>', $last_news1->first()->id)
             ->orderBy("publish_date", 'desc')
-            ->limit(5)->get();
+            ->limit(7)->get();
 
 
         $top_thoisu = Newspaper::where('title_id', '=', '1')->where('status', '=', '3')
@@ -66,7 +66,7 @@ class GuestControllner extends Controller
             ->where('publish_date', '<=', $dt)->orderBy("publish_date", 'desc')->limit(3)->get();
 
 
-        return view('guest.home', compact('last_news1', 'dt', 'last_news', 'news_thoisu', 'news_thoisu1', 'news_thoisu2', 'news_thoisu3', 'news_thoisu4', 'top_thoisu'
+        return view('guest.home', compact('last_news1', 'dt', 'last_news', 'news_thoisu', 'news_thoisu1', 'index_thoisu', 'news_thoisu3', 'news_thoisu4', 'top_thoisu'
             , 'top_thegioi', 'top_xe', 'top_giaitri', 'top_phapluat', 'top_kinhdoanh', 'top_congnghe', 'top_congnghe', 'top_dulich', 'top_vanhoa', 'top_thethao'));
     }
 
@@ -355,6 +355,7 @@ class GuestControllner extends Controller
 
         return view('guest.xe', compact('xe', 'xe_all', 'xe_news'));
     }
+
 
 
     //

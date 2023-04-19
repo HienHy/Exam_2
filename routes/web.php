@@ -50,7 +50,7 @@ Route::middleware(['auth', 'admin'])->prefix(env('ADMIN_PATH'))->group(function 
         Route::get('/list', [\App\Http\Controllers\UserControllner::class, "list"]);
         Route::get('/create', [\App\Http\Controllers\UserControllner::class, "create"]);
         Route::post('/create-a', [\App\Http\Controllers\UserControllner::class, "save"]);
-        Route::delete("/list/{user}", [\App\Http\Controllers\UserControllner::class, "delete"])->name('user.xoaphongvien');
+        Route::post("/list-a/{user}", [\App\Http\Controllers\UserControllner::class, "deleteUser"])->name('user.xoaphongvien');
 
 
 
@@ -89,6 +89,8 @@ Route::get("/thoi-su", [\App\Http\Controllers\GuestControllner::class, "thoiSuPa
 Route::get("/van-hoa", [\App\Http\Controllers\GuestControllner::class, "vanHoaPage"]);
 Route::get("/xe", [\App\Http\Controllers\GuestControllner::class, "xePage"]);
 Route::post("/aa", [\App\Http\Controllers\CommentControllner::class, "store"]);
+
+
 
 
 Route::post('test-ajax', [\App\Http\Controllers\CommentControllner::class, "demoAjax"])->name('test.ajax');

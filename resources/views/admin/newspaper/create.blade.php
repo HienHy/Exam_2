@@ -11,7 +11,7 @@
 @endsection
 @section('main-content')
 
-    <form role="form" action="{{url('admin/newspaper/create')}}" method="post" enctype="multipart/form-data">
+    <form role="form" action="{{url('/admin/newspaper/create')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="form-group col-6">
@@ -33,8 +33,8 @@
                     <option value="0">Chọn Tác Giả</option>
 
                     @foreach($author as $item)
-                        <option @if(app("request")->input("author_id")==$item->id) selected
-                                @endif  value="{{$item->id}}"> {{$item->name}}
+                        <option @if(app("request")->input("author_id")==$item->User->id) selected
+                                @endif  value="{{$item->User->id}}"> {{$item->User->name}}
 
                         </option>
                     @endforeach

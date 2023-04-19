@@ -93,17 +93,21 @@
     </div>
     <div class="col-6">
         <h4>Bình Luận</h4>
-
-
         @include('guest.commentDisplay', ['comments' => $newspaper->comments, 'newspaper_id' => $newspaper->id])
+
 
         <hr />
         <form method="post" action="{{url('/aa')}}">
             @csrf
             <div class="form-group">
                 <textarea class="form-control" name="content" required id="content"></textarea>
+                @error('content') <p class="text-danger">{{$message}}</p> @enderror
+
                 <input type="hidden" name="newspaper_id" value="{{ $newspaper->id }}" required />
+
+
             </div>
+
             <div class="form-group">
                 <input type="submit" class="btn btn-success" value="Bình Luận" />
             </div>

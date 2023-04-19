@@ -22,7 +22,7 @@
                                             <img src="{{$du_lich->image}}" />
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="">{{$du_lich->name}}</a>
+                                            <a class="mn-title" href="{{url("single-page",["newspaper"=>$du_lich->slug])}}">{{$du_lich->name}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>{{$du_lich->publish_date}}</a>
                                             <p>
                                                 {{$du_lich->description}}                                            </p>

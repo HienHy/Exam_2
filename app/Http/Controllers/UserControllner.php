@@ -16,9 +16,8 @@ class UserControllner extends Controller
     {
 
 
-        $data = DB::table('users')->join('admins', 'admins.user_id', '=', 'users.id')
-            ->where('role', '=', 'PV')
-            ->get();
+        $data =Admin::where('role','=','PV')->get();
+
 
 //dd($data);
 
@@ -44,13 +43,14 @@ class UserControllner extends Controller
             'role' => 'PV'
         ]);
 
-        redirect()->to('/admin/user/list');
+    return   redirect()->to('/admin/user/list');
 
 
     }
-    public function delete(User $user){
-        $user->Admin()->delete();
-
+    public function deleteUser(Admin $user){
+$user->update([
+    'status'=>0
+]);
         return redirect()->to('/admin/user/list');
     }
 

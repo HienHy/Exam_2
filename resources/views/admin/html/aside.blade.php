@@ -120,15 +120,15 @@
                                     <p>Danh sách chủ đề</p>
                                 </a>
                             </li>
-                            @if(auth()->user()->Admin->role == \App\Models\Admin::ADMIN || auth()->user()->Admin->role == \App\Models\Admin::BTV)
+{{--                            @if(auth()->user()->Admin->role == \App\Models\Admin::ADMIN || auth()->user()->Admin->role == \App\Models\Admin::BTV)--}}
 
-                                <li class="nav-item">
-                                    <a href="{{url("/admin/title/create")}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Thêm mới </p>
-                                    </a>
-                                </li>
-                            @endif
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{url("/admin/title/create")}}" class="nav-link">--}}
+{{--                                        <i class="far fa-circle nav-icon"></i>--}}
+{{--                                        <p>Thêm mới </p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            @endif--}}
 
 
                         </ul>

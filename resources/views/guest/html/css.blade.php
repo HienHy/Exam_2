@@ -1,14 +1,24 @@
 <!-- Favicon -->
-<link href="/assets/img/favicon.ico" rel="icon">
+<!-- Site Icons -->
+<link rel="shortcut icon" href="/assets/imagess/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/assets/imagess/apple-touch-icon.png">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+<!-- Design fonts -->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
 
-<!-- CSS Libraries -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-<link href="/assets/lib/slick/slick.css" rel="stylesheet">
-<link href="/assets/lib/slick/slick-theme.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
 
-<!-- Template Stylesheet -->
+<!-- FontAwesome Icons core CSS -->
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
 <link href="/assets/css/style.css" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="/assets/css/responsive.css" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="/assets/css/colors.css" rel="stylesheet">
+

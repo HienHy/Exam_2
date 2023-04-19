@@ -22,7 +22,7 @@
                                             <img src="{{$giai_tri->image}}" />
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="">{{$giai_tri->name}}</a>
+                                            <a class="mn-title" href="{{url("single-page",["newspaper"=>$giai_tri->slug])}}">{{$giai_tri->name}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>{{$giai_tri->publish_date}}</a>
                                             <p>
                                                 {{$giai_tri->description}}                                            </p>

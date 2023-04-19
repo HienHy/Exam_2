@@ -91,8 +91,11 @@
 
                         <td><a href="{{route("newspaper.details",["newspaper"=>$item->slug])}}"
                                class="btn-outline-info btn">Chi Tiết</a>
+
+                            @if($item->status != 2 && $item->status !=3)
                             <a href="{{route("newspaper.edit",["newspaper"=>$item->id])}}" class="btn-outline-info btn">Chỉnh
                                 Sửa</a>
+                            @endif
                         </td>
 
                     </tr>
